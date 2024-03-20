@@ -1,7 +1,7 @@
 // import React from 'react';
 // import logo from './logo.svg';
 // import './App.css';
-import logImg from "./assets/img/Netflix_logo.svg.png";
+import logoImg from "./assets/img/Netflix_logo.svg.png";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <header style={{ padding: "1.5rem 2rem" }}>
         <a href="/">
           <img
-            src={logImg}
+            src={logoImg}
             alt="logo"
             style={{ width: "9.25rem", height: "2.5rem" }}
           />
