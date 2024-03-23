@@ -10,25 +10,32 @@ export default function LoginId() {
   const toast = useRef(null);
 
   const login = (parmas) => {
-    axios.post("http://localhost:8080/login", parmas).then((res) => {
-      console.log(res);
-    });
+    // try {
+    //   axios.post("http://127.0.0.1:8080/login", parmas).then((res) => {
+    //     console.log(res);
+    //   });
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    axios
+      .get("https://jsonplaceholder.typicode.com/posts/1")
+      .then((res) => console.log(res.data));
   };
 
   const formik = useFormik({
     initialValues: {
-      userId: "",
-      userPw: "",
+      username: "",
+      password: "",
     },
     validate: (data) => {
       let errors = {};
 
-      if (!data.userId) {
-        errors.userId = "정확한 이메일 주소나 전화번호를 입력하세요.";
+      if (!data.username) {
+        errors.username = "정확한 이메일 주소나 전화번호를 입력하세요.";
       }
 
-      if (!data.userPw) {
-        errors.userPw = "비밀번호는 4~60자 사이여야 합니다.";
+      if (!data.password) {
+        errors.password = "비밀번호는 4~60자 사이여야 합니다.";
       }
 
       return errors;
@@ -62,19 +69,19 @@ export default function LoginId() {
             style={{
               width: "100%",
             }}
-            id="userId"
-            name="userId"
-            value={formik.values.userId}
+            id="username"
+            name="username"
+            value={formik.values.username}
             onChange={(e) => {
-              formik.setFieldValue("userId", e.target.value);
+              formik.setFieldValue("username", e.target.value);
             }}
             className={classNames({
-              "p-invalid": isFormFieldInvalid("userId"),
+              "p-invalid": isFormFieldInvalid("username"),
             })}
           />
-          <label htmlFor="userId">이메일 주소 또는 전화번호</label>
+          <label htmlFor="username">이메일 주소 또는 전화번호</label>
         </span>
-        {getFormErrorMessage("userId")}
+        {getFormErrorMessage("username")}
 
         <span className="p-float-label" style={{ marginTop: "20px" }}>
           <Toast ref={toast} />
@@ -82,20 +89,20 @@ export default function LoginId() {
             style={{
               width: "100%",
             }}
-            id="userPw"
-            name="userPw"
+            id="password"
+            name="password"
             type="password"
-            value={formik.values.userPw}
+            value={formik.values.password}
             onChange={(e) => {
-              formik.setFieldValue("userPw", e.target.value);
+              formik.setFieldValue("password", e.target.value);
             }}
             className={classNames({
-              "p-invalid": isFormFieldInvalid("userPw"),
+              "p-invalid": isFormFieldInvalid("password"),
             })}
           />
-          <label htmlFor="userPw">비밀번호</label>
+          <label htmlFor="password">비밀번호</label>
         </span>
-        {getFormErrorMessage("userPw")}
+        {getFormErrorMessage("password")}
 
         <Button
           style={{
