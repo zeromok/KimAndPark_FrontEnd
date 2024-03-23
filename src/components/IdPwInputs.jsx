@@ -5,6 +5,7 @@ import { InputText } from "primereact/inputtext";
 import { Toast } from "primereact/toast";
 import { classNames } from "primereact/utils";
 import React, { useRef } from "react";
+import axiosInstance from "../services/api";
 
 export default function LoginId() {
   const toast = useRef(null);
@@ -17,9 +18,9 @@ export default function LoginId() {
     // } catch (error) {
     //   console.log(error);
     // }
-    axios
+    axiosInstance
       .get(process.env.REACT_APP_TEST_URL)
-      .then((res) => console.log(res.data));
+      .then((res) => console.log(res));
   };
 
   const formik = useFormik({
