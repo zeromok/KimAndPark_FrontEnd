@@ -8,14 +8,6 @@ import React, { useRef } from "react";
 export default function LoginId() {
   const toast = useRef(null);
 
-  const show = () => {
-    toast.current.show({
-      severity: "success",
-      summary: "Form Submitted",
-      detail: formik.values.userId,
-    });
-  };
-
   const formik = useFormik({
     initialValues: {
       userId: "",
@@ -35,7 +27,8 @@ export default function LoginId() {
       return errors;
     },
     onSubmit: (data) => {
-      data && show(data);
+      alert("login API Call");
+      console.log(data);
       formik.resetForm();
     },
   });

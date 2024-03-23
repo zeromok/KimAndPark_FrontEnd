@@ -1,0 +1,11 @@
+.loginForm {
+  display: flex;
+  margin: auto;
+  padding: 0 5%;
+  max-width: 450px;
+  flex-grow: 1;
+
+  .box {
+    width: 100%;
+  }
+}
