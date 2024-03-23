@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useFormik } from "formik";
 import { Button } from "primereact/button";
 import { InputText } from "primereact/inputtext";
@@ -7,6 +8,12 @@ import React, { useRef } from "react";
 
 export default function LoginId() {
   const toast = useRef(null);
+
+  const login = (parmas) => {
+    axios.post("http://localhost:8080/login", parmas).then((res) => {
+      console.log(res);
+    });
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -28,7 +35,7 @@ export default function LoginId() {
     },
     onSubmit: (data) => {
       alert("login API Call");
-      console.log(data);
+      login(data);
       formik.resetForm();
     },
   });
