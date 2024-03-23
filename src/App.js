@@ -1,13 +1,14 @@
-// import logo from './logo.svg';
-// import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "primereact/resources/themes/lara-light-cyan/theme.css";
-import { Button } from "primereact/button";
+import Main from "./pages/main/index"
 
 function App() {
   return (
-    <>
-      <Button label="Check" icon="pi pi-check" />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
