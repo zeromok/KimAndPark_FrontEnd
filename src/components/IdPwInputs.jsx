@@ -11,6 +11,7 @@ export default function LoginId() {
   const toast = useRef(null);
 
   const login = (parmas) => {
+    // TODO: axios 모둘화 하여 다시 작업해야 함.
     // try {
     //   axios.post("http://127.0.0.1:8080/login", parmas).then((res) => {
     //     console.log(res);
