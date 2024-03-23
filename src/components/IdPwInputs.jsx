@@ -18,7 +18,7 @@ export default function LoginId() {
     //   console.log(error);
     // }
     axios
-      .get("https://jsonplaceholder.typicode.com/posts/1")
+      .get(process.env.REACT_APP_TEST_URL)
       .then((res) => console.log(res.data));
   };
 
