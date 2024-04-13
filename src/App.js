@@ -1,7 +1,7 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "primereact/resources/themes/lara-light-cyan/theme.css";
-import Home from "./pages/Home/index"
-import Login from "./pages/Login/index"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home/index";
+import Login from "./pages/Login/index";
 
 function App() {
   return (
